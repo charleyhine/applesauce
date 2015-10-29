@@ -28,3 +28,5 @@ build/Release
 node_modules
 
 Applesauce-darwin-x64
+
+.DS_Store

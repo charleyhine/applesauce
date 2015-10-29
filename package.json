@@ -10,6 +10,9 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "go-ipfs": "^0.3.7"
+  },
   "devDependencies": {
     "electron-packager": "^5.1.0",
     "electron-prebuilt": "^0.34.1"
