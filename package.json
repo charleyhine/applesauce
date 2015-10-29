@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "go-ipfs": "^0.3.7"
+    "go-ipfs": "^0.3.7",
+    "ipfsd-ctl": "^0.5.6"
   },
   "devDependencies": {
     "electron-packager": "^5.1.0",

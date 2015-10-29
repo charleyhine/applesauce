@@ -36,4 +36,26 @@ app.on('ready', function() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+
+  // Start and stop daemon
+  var ipfsd = require('ipfsd-ctl')
+
+  ipfsd.disposableApi(function (err, ipfs) {
+    if (err) throw err
+    ipfs.id(function (err, id) {
+      if (err) throw err
+      console.log('alice')
+      console.log(id)
+    })
+  })
+
+  ipfsd.disposableApi(function (err, ipfs) {
+    if (err) throw err
+    ipfs.id(function (err, id) {
+      if (err) throw err
+      console.log('bob')
+      console.log(id)
+    })
+  })
+
 });
