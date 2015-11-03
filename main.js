@@ -39,23 +39,23 @@ app.on('ready', function() {
 
   // Start and stop daemon
   var ipfsd = require('ipfsd-ctl')
+  var path = '~/.applesauce-ipfs'
 
-  ipfsd.disposableApi(function (err, ipfs) {
+  var fs = require("fs");
+
+  ipfsd.local(path, function (err, ipfs) {
     if (err) throw err
-    ipfs.id(function (err, id) {
-      if (err) throw err
-      console.log('alice')
-      console.log(id)
-    })
+
+    if ( !fs.exists(path) ) {
+      ipfs.init(function (err) {
+        if (err) throw err
+        console.log(ipfs.id)
+      })
+    }
+
   })
 
-  ipfsd.disposableApi(function (err, ipfs) {
-    if (err) throw err
-    ipfs.id(function (err, id) {
-      if (err) throw err
-      console.log('bob')
-      console.log(id)
-    })
-  })
+
+
 
 });
